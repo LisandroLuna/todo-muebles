@@ -1,0 +1,14 @@
+.menu li {
+    display:inline;
+    padding: 0.5em;
+}
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 0.7em;
+    border-radius: 0.5em;
+}
+.menu a:hover {
+    color: grey;
+    background-color: whitesmoke;
+}

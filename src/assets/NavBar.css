@@ -4,11 +4,11 @@
 }
 .menu a {
     text-decoration: none;
-    color: white;
+    color: white !important;
     padding: 0.7em;
     border-radius: 0.5em;
 }
 .menu a:hover {
-    color: grey;
+    color: grey !important;
     background-color: whitesmoke;
 }

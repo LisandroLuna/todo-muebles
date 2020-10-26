@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './media/img/logo.svg';
 import './assets/App.css';
-import NavBar from './components/navBar'
+import NavBar from './components/NavBar'
+import Footer from "./components/Footer";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar></NavBar>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Todo Muebles - Sitio en Construcción.
-        </p>
-        <a
-          className="App-link"
-          href="https://github.com/LisandroLuna"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          By Lisandro Luna - CoderHouse ReactJs
-        </a>
-      </header>
+    <div className="container-fluid">
+        <header className="App-header">
+            <NavBar></NavBar>
+        </header>
+        <div class="row">
+            <Home greeting="El sitio se encuentra en construccion, pronto estara disponible."></Home>
+        </div>
+        <Footer></Footer>
     </div>
   );
 }

@@ -11,15 +11,13 @@ class ItemCount extends React.Component{
 
     count = () => {
         if(this.state.itemNumber < this.props.max){
-            const item = this.state.itemNumber + 1;
-            this.setState({ itemNumber: item});
+            this.setState({ itemNumber: this.state.itemNumber + 1});
         }
     }
 
     discount = () => {
         if(this.state.itemNumber > this.props.min){
-            const item = this.state.itemNumber - 1;
-            this.setState({ itemNumber: item});
+            this.setState({ itemNumber: this.state.itemNumber - 1});
         }
     }
 

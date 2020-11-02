@@ -1,6 +1,5 @@
 import '../assets/Home.css';
 import React from "react";
-import ItemCount from "../components/ItemCount";
 import Product from "../components/Product";
 
 function Home({greeting}) {

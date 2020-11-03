@@ -11,7 +11,7 @@ function App() {
             <NavBar/>
         </header>
         <div className="row mx-0">
-            <Home greeting="El sitio se encuentra en construccion, pronto estara disponible."/>
+            <Home greeting="La mejor variedad de muebles a su disposición."/>
         </div>
         <Footer/>
     </div>

@@ -1,6 +1,6 @@
 import '../assets/Home.css';
 import React from "react";
-import Product from "../components/Product";
+import ItemList from "../components/ItemList";
 
 function Home({greeting}) {
     return (
@@ -8,7 +8,9 @@ function Home({greeting}) {
             <h1 className={"display-4 text-center"}>Todo Muebles</h1>
             <p className={"lead text-center"}><i className="fas fa-tools"></i></p>
             <p className={"lead text-center"}>{ greeting }</p>
-            <Product/>
+            <div class={"col-md-9 mx-auto"}>
+                <ItemList/>
+            </div>
         </div>
     );
 }

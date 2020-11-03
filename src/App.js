@@ -10,7 +10,7 @@ function App() {
         <header className="App-header">
             <NavBar/>
         </header>
-        <div className="row">
+        <div className="row mx-0">
             <Home greeting="El sitio se encuentra en construccion, pronto estara disponible."/>
         </div>
         <Footer/>

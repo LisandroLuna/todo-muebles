@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0f00ea06147242df17edbdf8cf73a86f",
+    "revision": "d0a4c2c7ada08f216dcff7c42bc9500d",
     "url": "/todo-muebles/index.html"
   },
   {
-    "revision": "2937dc48606779744b75",
+    "revision": "f9a470e44461e117124c",
     "url": "/todo-muebles/static/css/main.39c28325.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/todo-muebles/static/js/2.6a709414.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2937dc48606779744b75",
-    "url": "/todo-muebles/static/js/main.a1ad09a2.chunk.js"
+    "revision": "f9a470e44461e117124c",
+    "url": "/todo-muebles/static/js/main.b51f9ba4.chunk.js"
   },
   {
     "revision": "9e5eb57a860e0c8086a7",

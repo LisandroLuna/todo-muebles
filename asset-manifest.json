@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/todo-muebles/static/css/main.39c28325.chunk.css",
+    "main.js": "/todo-muebles/static/js/main.a1ad09a2.chunk.js",
+    "main.js.map": "/todo-muebles/static/js/main.a1ad09a2.chunk.js.map",
+    "runtime-main.js": "/todo-muebles/static/js/runtime-main.75cbf59e.js",
+    "runtime-main.js.map": "/todo-muebles/static/js/runtime-main.75cbf59e.js.map",
+    "static/js/2.6a709414.chunk.js": "/todo-muebles/static/js/2.6a709414.chunk.js",
+    "static/js/2.6a709414.chunk.js.map": "/todo-muebles/static/js/2.6a709414.chunk.js.map",
+    "index.html": "/todo-muebles/index.html",
+    "precache-manifest.c5a76d79011f8cdc6e9f46d2943ae3e9.js": "/todo-muebles/precache-manifest.c5a76d79011f8cdc6e9f46d2943ae3e9.js",
+    "service-worker.js": "/todo-muebles/service-worker.js",
+    "static/css/main.39c28325.chunk.css.map": "/todo-muebles/static/css/main.39c28325.chunk.css.map",
+    "static/js/2.6a709414.chunk.js.LICENSE.txt": "/todo-muebles/static/js/2.6a709414.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.75cbf59e.js",
+    "static/js/2.6a709414.chunk.js",
+    "static/css/main.39c28325.chunk.css",
+    "static/js/main.a1ad09a2.chunk.js"
+  ]
+}

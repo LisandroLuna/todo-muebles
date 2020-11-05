@@ -3,6 +3,7 @@ import './assets/App.css';
 import NavBar from './components/NavBar'
 import Footer from "./components/Footer";
 import Home from "./containers/Home";
+import ItemDetailContainer from "./containers/ItemDetailContainer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         </header>
         <div className="row mx-0">
             <Home greeting="La mejor variedad de muebles a su disposición."/>
+            <ItemDetailContainer/>
         </div>
         <Footer/>
     </div>

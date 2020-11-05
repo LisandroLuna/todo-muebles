@@ -2,7 +2,7 @@ import '../assets/Home.css';
 import React, {useEffect, useState} from "react";
 import ItemList from "../components/ItemList";
 import itemData from "../data/muebles.json"
-import Spinner from "../components/Spinner";
+import ItemListSkeleton from "../components/ItemListSkeleton";
 
 function Home({greeting}) {
     const [itemList, setItemList] = useState([]);
@@ -21,10 +21,9 @@ function Home({greeting}) {
 
     return (
         <div className={"col-lg-12 home"}>
-            <h1 className={"display-4 text-center"}>Todo Muebles</h1>
-            <p className={"lead text-center"}>{ greeting }</p>
+            <p className={"lead text-center mt-5"}>{ greeting }</p>
             <div className={"col-md-9 mx-auto p-5"}>
-                {loadState ? <Spinner/> : <ItemList items={itemList}/>}
+                {loadState ? <ItemListSkeleton /> : <ItemList items={itemList}/>}
             </div>
         </div>
     );

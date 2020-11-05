@@ -1,9 +1,9 @@
 .fas{
     font-size: 1.5rem;
     padding: 1rem;
-    color: whitesmoke;
+    color: white;
     margin-right: 1rem;
 }
 .fas:hover{
-     color: darkgrey;
+     color: lightgrey;
  }

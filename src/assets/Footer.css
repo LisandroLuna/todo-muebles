@@ -1,6 +1,18 @@
+footer{
+    background: #03989e;
+    padding: 1.5rem;
+}
 footer a{
-    color: whitesmoke;
+    color: white;
 }
 footer a:hover{
      color: lightgrey;
  }
+.fab{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: white;
+}
+.fab:hover{
+    color: lightgrey;
+}

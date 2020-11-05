@@ -1,3 +1,6 @@
+.navbar-light{
+    background: #03989e;
+}
 .menu li {
     display:inline;
     padding: 0.5em;
@@ -11,4 +14,7 @@
 .menu a:hover {
     color: grey !important;
     background-color: whitesmoke;
+}
+.logo{
+    max-width: 16rem;
 }

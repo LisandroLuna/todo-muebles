@@ -1,10 +1,10 @@
 import '../assets/ItemDetail.css';
 import React from "react";
 
-function ItemDetail() {
+function ItemDetSkeleton() {
     return (
-        <p>Item</p>
+        <p>Loading</p>
     );
 }
 
-export default ItemDetail;
+export default ItemDetSkeleton;

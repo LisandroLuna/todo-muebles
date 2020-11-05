@@ -3,7 +3,7 @@ import React from "react";
 
 function CartIcon() {
     return (
-            <a href="#"><i className="fas fa-shopping-cart"></i></a>
+            <a className="ml-auto" href="#"><i className="fas fa-shopping-cart"></i></a>
     );
 }
 

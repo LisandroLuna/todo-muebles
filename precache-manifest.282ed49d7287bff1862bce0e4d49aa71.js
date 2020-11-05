@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9f0f01d9585043e93ad7e8c77b3949b3",
+    "revision": "dd0c2398d6280d4a3ce85c0306d17b1a",
     "url": "/todo-muebles/index.html"
   },
   {
-    "revision": "85483efb033e47db39ee",
-    "url": "/todo-muebles/static/css/main.2b9d7e53.chunk.css"
+    "revision": "1b62cb95ddae02ffcc6b",
+    "url": "/todo-muebles/static/css/main.70d5ea9f.chunk.css"
   },
   {
     "revision": "b46d36712f90d82aeb81",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/todo-muebles/static/js/2.60f7e69f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "85483efb033e47db39ee",
-    "url": "/todo-muebles/static/js/main.1e57de8d.chunk.js"
+    "revision": "1b62cb95ddae02ffcc6b",
+    "url": "/todo-muebles/static/js/main.1a8fe084.chunk.js"
   },
   {
     "revision": "9e5eb57a860e0c8086a7",

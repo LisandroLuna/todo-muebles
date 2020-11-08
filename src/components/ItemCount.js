@@ -9,7 +9,7 @@ function ItemCount(props){
     const [itemNumber, setItemNumber] = useState(initial);
 
     return(
-        <div className="col text-center">
+        <div className="col text-center m-2">
             <p>
                 <button className="btn btn-success ml-auto" onClick={() => setItemNumber(itemNumber + 1)} disabled={itemNumber === max}>+</button>
                 <b value={itemNumber} className="m-4">{itemNumber}</b>

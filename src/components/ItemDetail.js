@@ -1,6 +1,6 @@
 import '../assets/ItemDetail.css';
 import React from "react";
-import ItemCountDetail from "./ItemCountDetail";
+import ItemCount from "./ItemCount";
 
 function ItemDetail(props) {
 
@@ -32,7 +32,7 @@ function ItemDetail(props) {
                 <h3 className="product-title">{item.title}</h3>
                 <p className="product-description">{item.descl}</p>
                 <h4 className="price">Precio: <span>{item.price}</span></h4>
-                <ItemCountDetail initial={1} min={1} max={10} onAdd={addItem}/>
+                <ItemCount initial={1} min={1} max={10} onAdd={addItem}/>
             </div>
         </div>
     );

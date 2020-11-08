@@ -1,9 +1,10 @@
 import '../assets/CartIcon.css';
 import React from "react";
+import { NavLink } from 'react-router-dom';
 
 function CartIcon() {
     return (
-            <a className="ml-auto" href="#"><i className="fas fa-shopping-cart"></i></a>
+        <NavLink to="/cart" className="ml-auto"><i className="fas fa-shopping-cart"></i></NavLink>
     );
 }
 

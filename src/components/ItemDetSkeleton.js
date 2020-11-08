@@ -1,6 +1,5 @@
 import '../assets/ItemDetail.css';
 import React from "react";
-import ItemCountDetail from "./ItemCountDetail";
 import Skeleton from "react-loading-skeleton";
 
 function ItemDetSkeleton() {

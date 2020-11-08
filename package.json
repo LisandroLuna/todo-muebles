@@ -1,5 +1,6 @@
 {
   "name": "todo-muebles",
+  "homepage": "https://lisandroluna.github.io/todo-muebles",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

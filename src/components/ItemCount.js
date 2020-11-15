@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import '../assets/ItemCount.css';
+import BuyBtn from "./BuyBtn";
 
 function ItemCount(props){
     // Declaro props
-    const { initial, min, max, onAdd } = props;
+    const { initial, min, max, onAdd, home } = props;
 
     // Declaro contador
     const [itemNumber, setItemNumber] = useState(initial);
@@ -15,9 +16,7 @@ function ItemCount(props){
                 <b value={itemNumber} className="m-4">{itemNumber}</b>
                 <button className="btn btn-danger mr-auto" onClick={() => setItemNumber(itemNumber - 1)} disabled={itemNumber === min}>-</button>
             </p>
-            <div className="col text-center">
-                <button onClick={() => onAdd()} className="btn btn-info ml-auto mr-auto">Agregar al carrito</button>
-            </div>
+            <BuyBtn onAdd={onAdd} count={itemNumber} home={home}/>
         </div>
     )
 }

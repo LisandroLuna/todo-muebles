@@ -5,8 +5,8 @@ import {NavLink} from "react-router-dom";
 
 function Item(props){
     const { prod } = props;
-    function addItem(){
-        console.log(prod.title + " - Item added to cart!");
+    function addItem(a){
+        console.log(prod.title + " - " + a + " Item(s) purchased!");
     }
 
     return (
@@ -20,7 +20,7 @@ function Item(props){
                         <h5 className="card-title">{prod.title}</h5>
                         <p className="card-text">{prod.descs}</p>
                     </NavLink>
-                    <ItemCount initial={1} min={1} max={10} onAdd={addItem}/>
+                    <ItemCount initial={1} min={1} max={10} onAdd={addItem} home={1}/>
                 </div>
             </div>
         </div>

@@ -6,8 +6,8 @@ function ItemDetail(props) {
 
     const { item } = props;
 
-    function addItem(){
-        console.log(item.title + " - Item purchased!");
+    function addItem(a){
+        console.log(item.title + " - " + a +" Item purchased!");
     }
     return (
         <div className="wrapper row">
@@ -32,7 +32,7 @@ function ItemDetail(props) {
                 <h3 className="product-title">{item.title}</h3>
                 <p className="product-description">{item.descl}</p>
                 <h4 className="price">Precio: <span>{item.price}</span></h4>
-                <ItemCount initial={1} min={1} max={10} onAdd={addItem}/>
+                <ItemCount initial={1} min={1} max={10} onAdd={addItem} home={0}/>
             </div>
         </div>
     );

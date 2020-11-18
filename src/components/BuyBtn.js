@@ -7,7 +7,7 @@ function CartAddItem(props){
 
     useEffect(()=>{
         item.total = count;
-    }, [count])
+    })
 
     return <>
         <button

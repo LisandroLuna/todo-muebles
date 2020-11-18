@@ -10,29 +10,32 @@ import {
     Switch,
     Route
 } from "react-router-dom";
+import {CartProvider} from "./contexts/cartContext";
 
 function App() {
   return (
       <Router>
-          <div className="container-fluid">
-              <header className="App-header">
-                  <NavBar/>
-              </header>
-              <div className="row mx-0">
-                  <Switch>
-                      <Route path="/item/:id">
-                          <ItemDetailContainer />
-                      </Route>
-                      <Route path="/cart">
-                          <Cart />
-                      </Route>
-                      <Route exact path="/">
-                          <Home />
-                      </Route>
-                  </Switch>
+          <CartProvider>
+              <div className="container-fluid">
+                  <header className="App-header">
+                      <NavBar/>
+                  </header>
+                  <div className="row mx-0">
+                      <Switch>
+                          <Route path="/item/:id">
+                              <ItemDetailContainer />
+                          </Route>
+                          <Route path="/cart">
+                              <Cart />
+                          </Route>
+                          <Route exact path="/">
+                              <Home />
+                          </Route>
+                      </Switch>
+                  </div>
+                  <Footer/>
               </div>
-              <Footer/>
-          </div>
+          </CartProvider>
       </Router>
   );
 }

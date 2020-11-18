@@ -1,5 +1,4 @@
 import React from "react";
-import ItemCount from "./ItemCount";
 import Skeleton from 'react-loading-skeleton';
 
 

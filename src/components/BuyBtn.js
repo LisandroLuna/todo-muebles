@@ -1,14 +1,28 @@
-import React from "react";
+import React, {useEffect} from "react";
+import { useCartContext } from  "../contexts/cartContext";
+
+function CartAddItem(props){
+    const { count, item, home } = props;
+    const { addItem } = useCartContext();
+
+    useEffect(()=>{
+        item.total = count;
+    }, [count])
+
+    return <>
+        <button
+            onClick={() => addItem(item)}
+            className="btn btn-info ml-auto mr-auto">
+            {home === 1? "Agregar al Carrito"  : "Comprar " + count}
+        </button>
+    </>
+}
 
 function BuyItem(props){
     const { count, onAdd, home } = props;
     return (
         <div className="col text-center">
-            <button
-                onClick={() => onAdd(count)}
-                className="btn btn-info ml-auto mr-auto">
-                {home === 1? "Agregar al Carrito: " + count : "Comprar: " + count}
-            </button>
+            <CartAddItem count={count} item={onAdd} home={home} />
         </div>
     );
 }

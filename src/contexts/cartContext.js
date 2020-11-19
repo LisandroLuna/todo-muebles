@@ -14,22 +14,22 @@ export function CartProvider({children}) {
             console.log(newItems);
             console.log('Item added: ' + newItem.title);
         }else{
-            //Esta parte no pude hacerla funcionar
-
-/*          const newList = [...items].filter(i => i.id !== newItem.id);
-            const olditem = [...items].filter(i => i.id === newItem.id)[0];
-            console.log(newItem.total)
-            console.log(olditem.total)
-            newItem.total += olditem.total;
-            console.log(newItem.total)
-            const finalList = [...newList, newItem]
-            setItems(finalList);
-            console.log('Item updated: ' + newItem.title);*/
+            const newList = [...items];
+            newList.map(item => {
+                if(item.id === newItem.id){
+                    item.total += newItem.total;
+                    return true;
+                }
+                return false;
+            })
+            setItems(newList);
+            console.log('Item updated: ' + newItem.title);
         }
     }
 
     function checkItem(item){
-        if(items.filter(i => i.id === item.id).length > 0){
+        const some = i => i.id === item.id;
+        if(items.some(some)){
             return true;
         }
         return false;

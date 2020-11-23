@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 function CartItem(props){
     const { item } = props;
-    const price = item.price * item.total
+    const price = parseFloat(item.price * item.total).toFixed(2);
     return <>
         <li className="list-group-item d-flex justify-content-between align-items-center"><NavLink to={"/item/" + item.id}>
             {item.title}</NavLink> <b className={"ml-auto p-2"}>${price}</b>
@@ -22,7 +22,7 @@ function CartDetail() {
         <div className={"col-lg-9 p-5"}>
             <h2>Cart List <span className="badge badge-primary badge-pill">{actSize}</span></h2>
             <ul className="list-group-flush">
-                {items.map(i => <CartItem key={i.id} item={i}/>)}
+                {items.length > 0 ? items.map(i => <CartItem key={i.id} item={i}/>) : <p className={"lead p-5"}>Carrito vacío. Ir al <NavLink to={"/"}>Inicio</NavLink></p>}
             </ul>
         </div>
     );

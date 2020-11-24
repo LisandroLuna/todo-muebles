@@ -1,7 +1,14 @@
 .home{
-    background-color: whiteS;
+    background-color: white;
 }
 p .fas{
     font-size: 15rem;
     color: #343a40;
+}
+.card-img, .card-img-top {
+    height: 20rem!important;
+    padding: 3rem;
+}
+.banner{
+    background-color: #03989e;
 }

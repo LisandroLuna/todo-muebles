@@ -2,32 +2,28 @@ import '../assets/ItemDetCont.css';
 import React, {useEffect, useState} from "react";
 import ItemDetail from "../components/ItemDetail";
 import ItemDetSkeleton from "../components/ItemDetSkeleton";
-import itemData from "../data/muebles.json"
 import { useParams } from "react-router-dom";
+import {getFirestore} from "../firebase";
 
 function ItemDetailContainer() {
     const { id } = useParams();
     const [item, setItem] = useState({});
     const [loadState, setLoadState] = useState(true);
-
-    const getItemProm = (data) => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {return resolve(data)}, 3000);
-        })
-    };
+    const [errorState, setErrorState] = useState(false);
 
     useEffect( () =>{
-        getItemProm(itemData)
-            .then(resolve => {
-                resolve.map(function (i) {
-                    if(i.id == id){
-                        setItem(i);
-                    }
-                })
+        const db = getFirestore();
+        const item = db.collection("items").doc(id);
+        item.get()
+            .then((doc) => {
+                if (!doc.exists) {
+                    setErrorState(true);
+                }
+                setItem({ id: id, ...doc.data() });
+                setLoadState(false);
             })
-            .finally(() => {
-                setLoadState(false)
-            });
+            .catch(setErrorState(true))
+            .finally();
     }, []);
 
     return (

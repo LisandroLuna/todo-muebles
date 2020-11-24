@@ -36,9 +36,22 @@ export function CartProvider({children}) {
     }
 
     function removeItem(item){
-        const newItems = items.filter(i => i.id !== item.id);
-        setItems(newItems);
-        console.log('Item removed');
+        if(item.total === 1){
+            const newItems = items.filter(i => i.id !== item.id);
+            setItems(newItems);
+            console.log('Item removed');
+        }else{
+            const newList = [...items];
+            newList.map(i => {
+                if(i.id === item.id){
+                    i.total -= 1;
+                    return true;
+                }
+                return false;
+            })
+            setItems(newList);
+            console.log('Item removed');
+        }
     }
 
     function clearItems(){

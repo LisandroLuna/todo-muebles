@@ -29,7 +29,7 @@ function App() {
                               <Cart />
                           </Route>
                           <Route exact path="/">
-                              <Home />
+                              <Home greeting={"Todo Muebles"} />
                           </Route>
                       </Switch>
                   </div>

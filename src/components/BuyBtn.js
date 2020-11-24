@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { useCartContext } from  "../contexts/cartContext";
 
 function CartAddItem(props){

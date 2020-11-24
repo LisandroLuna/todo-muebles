@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
-            <NavLink className="navbar-brand" to={"/"}><img className="logo" src={logo}/></NavLink>
+            <NavLink className="navbar-brand" to={"/"}><img className="logo" src={logo} alt={"Todo Muebles"}/></NavLink>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -15,9 +15,9 @@ function NavBar() {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav menu">
                     <li className="nav-item"><NavLink className="nav-link" to={"/"}>Inicio</NavLink></li>
-                    <li className="nav-item"><a className="nav-link" href="#">Nosotros</a></li>
-                    <li className="nav-item"><a className="nav-link" href="#">Productos</a></li>
-                    <li className="nav-item"><a className="nav-link" href="#">Contacto</a></li>
+                    <li className="nav-item"><NavLink className="nav-link" to={"#"}>Nosotros</NavLink></li>
+                    <li className="nav-item"><NavLink className="nav-link" to={"#"}>Productos</NavLink></li>
+                    <li className="nav-item"><NavLink className="nav-link" to={"#"}>Contacto</NavLink></li>
                 </ul>
                 <CartIcon></CartIcon>
             </div>

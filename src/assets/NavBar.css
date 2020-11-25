@@ -18,3 +18,12 @@
 .logo{
     max-width: 16rem;
 }
+.dropdown-menu {
+    background-color: #03989e;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #0c0c0c !IMPORTANT;
+    text-decoration: none;
+    background-color: #ffffff;
+}

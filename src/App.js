@@ -11,6 +11,7 @@ import {
     Route
 } from "react-router-dom";
 import {CartProvider} from "./contexts/cartContext";
+import Items from "./containers/Items";
 
 function App() {
   return (
@@ -24,6 +25,12 @@ function App() {
                       <Switch>
                           <Route path="/item/:id">
                               <ItemDetailContainer />
+                          </Route>
+                          <Route path="/items/:categoryId">
+                              <Items />
+                          </Route>
+                          <Route path="/items/">
+                              <Items />
                           </Route>
                           <Route path="/cart">
                               <Cart />

@@ -12,7 +12,7 @@ function Item(props){
                     <img src={item.image} className="card-img-top" alt={item.title.toLowerCase()} alt={item.title}/>
                 </NavLink>
                 <div className="card-body">
-                        <h5 className="card-title"><NavLink to={"/item/" + item.id} item={item} className="card-link">{item.title.toLowerCase()}</NavLink></h5>
+                        <h5 className="card-title"><NavLink to={"/item/" + item.id} item={item} className="card-link">{item.title}</NavLink></h5>
                         <b>${item.price}</b>
                         <p className="card-text">{item.descS}</p>
 

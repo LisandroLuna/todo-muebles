@@ -2,9 +2,9 @@ import React, {useEffect, useState} from "react";
 import ItemList from "../components/ItemList";
 import ItemListSkeleton from "../components/ItemListSkeleton";
 import { getFirestore } from "../firebase";
-import { useParams } from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 
-function Items() {
+function Categories() {
     const { categoryId } = useParams();
     const [itemList, setItemList] = useState([]);
     const [loadState, setLoadState] = useState(true);
@@ -49,10 +49,10 @@ function Items() {
         <div className={"col-lg-12 home"}>
             <div className={"col-md-9 mx-auto p-5"}>
                 {loadState ? <ItemListSkeleton /> : <ItemList items={itemList}/>}
-                {errorState ? <p className={"lead text-center"}>No hay productos que coincidan con tu búsqueda.</p> : ""}
+                {errorState ? <p className={"lead text-center"}>No hay productos que coincidan con tu búsqueda. Ir al <NavLink to={"/"}>Inicio</NavLink></p> : ""}
             </div>
         </div>
     );
 }
 
-export default Items;
+export default Categories;

@@ -11,7 +11,7 @@ import {
     Route
 } from "react-router-dom";
 import {CartProvider} from "./contexts/cartContext";
-import Items from "./containers/Items";
+import Categories from "./containers/Categories";
 
 function App() {
   return (
@@ -26,11 +26,11 @@ function App() {
                           <Route path="/item/:id">
                               <ItemDetailContainer />
                           </Route>
-                          <Route path="/items/:categoryId">
-                              <Items />
+                          <Route path="/categories/:categoryId">
+                              <Categories />
                           </Route>
-                          <Route path="/items/">
-                              <Items />
+                          <Route path="/categories/">
+                              <Categories />
                           </Route>
                           <Route path="/cart">
                               <Cart />

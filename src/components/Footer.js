@@ -8,7 +8,7 @@ function Footer() {
             <ul className="nav justify-content-center">
                 <li className="nav-item"><NavLink className="nav-link" to={"/"}>Inicio</NavLink></li>
                 <li className="nav-item"><NavLink className="nav-link" to={"#"}>Nosotros</NavLink></li>
-                <li className="nav-item"><NavLink className="nav-link" to={"#"}>Productos</NavLink></li>
+                <li className="nav-item"><NavLink className="nav-link" to={"/categories/"}>Productos</NavLink></li>
                 <li className="nav-item"><NavLink className="nav-link" to={"#"}>Contacto</NavLink></li>
             </ul>
             <div className="text-center">

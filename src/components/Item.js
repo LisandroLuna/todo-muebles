@@ -9,7 +9,7 @@ function Item(props){
         <div className="col mb-4">
             <div className="card h-100">
                 <NavLink to={"/item/" + item.id} className="card-link">
-                    <img src={item.image} className="card-img-top" alt={item.title.toLowerCase()} alt={item.title}/>
+                    <img src={item.image} className="card-img-top" alt={item.title} alt={item.title}/>
                 </NavLink>
                 <div className="card-body">
                         <h5 className="card-title"><NavLink to={"/item/" + item.id} item={item} className="card-link">{item.title}</NavLink></h5>

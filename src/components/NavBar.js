@@ -8,7 +8,7 @@ import {getFirestore} from "../firebase";
 function CartList(props){
     const { cat } = props;
     return <>
-        <NavLink className="dropdown-item" to={"/items/" + cat.id }>{ cat.title }</NavLink>
+        <NavLink className="dropdown-item" to={"/categories/" + cat.id }>{ cat.title }</NavLink>
     </>
 }
 

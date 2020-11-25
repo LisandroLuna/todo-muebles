@@ -1,14 +1,12 @@
 import '../assets/ItemDetail.css';
 import React from "react";
 import ItemCount from "./ItemCount";
+import {NavLink} from "react-router-dom";
 
-function ItemDetail(props) {
+function ItemData(props){
 
     const { item } = props;
-
-
-    return (
-        <div className="wrapper row">
+    return <>
             <div className="preview col-md-6">
                 <div className="preview-pic tab-content">
                     <div className="tab-pane active" id="pic-1">
@@ -27,6 +25,16 @@ function ItemDetail(props) {
                 <h4 className="price">Precio: <span>${item.price}</span></h4>
                 <ItemCount initial={1} min={1} max={10} onAdd={item} home={0}/>
             </div>
+        </>
+}
+
+function ItemDetail(props) {
+
+    const { item } = props;
+
+    return (
+        <div className="wrapper row">
+            {item.length > 0 ? <ItemData item={item}/> : <p className={"lead m-auto text-center"}>Producto no encontrado. Ir al <NavLink to={"/"}>Inicio</NavLink></p> }
         </div>
     );
 }

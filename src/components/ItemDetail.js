@@ -31,10 +31,9 @@ function ItemData(props){
 function ItemDetail(props) {
 
     const { item } = props;
-
     return (
         <div className="wrapper row">
-            {item.length > 0 ? <ItemData item={item}/> : <p className={"lead m-auto text-center"}>Producto no encontrado. Ir al <NavLink to={"/"}>Inicio</NavLink></p> }
+            {item.title === undefined ? <p className={"lead m-auto text-center"}>Producto no encontrado. Ir al <NavLink to={"/"}>Inicio</NavLink></p> : <ItemData item={item}/> }
         </div>
     );
 }

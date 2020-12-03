@@ -20,34 +20,58 @@ function CartDetail() {
     const [totalPrice, setTotalPrice] = useState(0);
     const [ name, setName ] = useState("");
     const [ email, setEmail ] = useState("");
+    const [ emailVer, setEmailVer ] = useState("");
+    const [ emailErr, setEmailErr ] = useState(false);
     const [ phone, setPhone ] = useState("");
-    const [ orderId, setOrderId ] = useState("");
     const [ loading, setLoading ] = useState(true);
 
     function handleSubmit(event){
         event.preventDefault();
-        const db = getFirestore();
-        const orders = db.collection("orders");
-        const order = {
-            buyer: {
-                name: name,
-                phone: phone,
-                email: email,
-            },
-            items: items,
-            date: new Date(),
-            total: totalPrice,
+        const emailError = handleEmail(email, emailVer);
+        if(emailError) {
+            const db = getFirestore();
+            const orders = db.collection("orders");
+            const order = {
+                buyer: {
+                    name: name,
+                    phone: phone,
+                    email: email,
+                },
+                items: items,
+                date: new Date(),
+                total: totalPrice,
+            }
+            orders.add(order).then(function (docRef) {
+                order.items.map(i => {
+                    const itemsList = db.collection("items").doc(i.id);
+                    itemsList.update({
+                        stock: (i.stock - i.total)
+                    })
+                    return true;
+                })
+                console.log("Se creo orden con ID: " + docRef.id);
+            }).catch(err => {
+                console.log(err);
+            }).finally(() => {
+                setLoading(false)
+                clearItems();
+            })
         }
-        orders.add(order).then(function(docRef) {
-            setOrderId(docRef.id);
-            alert("Se creo orden con ID: " + orderId);
-        }).catch(err => {
-            console.log(err);
-        }).finally(() => {
-            setLoading(false)
-            clearItems();
-        })
     }
+
+    function handleEmail(){
+        console.log(email)
+        console.log(emailVer)
+        if(email !== emailVer){
+            setEmailErr(true)
+            return false;
+        }else{
+            setEmailErr(false);
+            return true;
+        }
+    }
+
+
 
     useEffect(()=>{
         setActSize(size);
@@ -72,19 +96,28 @@ function CartDetail() {
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col p-3">
-                        <input onChange={(e) => setName(e.target.value)} type="text" className="form-control" id="name" placeholder="Nombre"/>
+                        <input required={true} onChange={(e) => setName(e.target.value)} type="text" className="form-control" id="name" placeholder="Nombre"/>
+                    </div>
+                    <div className="col-6 p-3">
+                        <input required={true} type="number" onChange={(e) => setPhone(e.target.value)} className="form-control" id="phone" placeholder="Telefono"/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-6 p-3">
-                        <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="email" placeholder="Email"/>
+                        <input required={true} onKeyUpCapture={() => handleEmail()} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="email" placeholder="Email"/>
                     </div>
                     <div className="col-6 p-3">
-                        <input type="number" onChange={(e) => setPhone(e.target.value)} className="form-control" id="phone" placeholder="Telefono"/>
+                        <input required={true} onKeyUpCapture={() => handleEmail()} onChange={(e) => setEmailVer(e.target.value)} type="email" className="form-control" id="email2" placeholder="Confirme Email"/>
                     </div>
                 </div>
                 <div className="text-right pt-4">
-                    <button type="submit" className="btn btn-success mt-auto">Comprar</button>
+                    {emailErr ?
+                        <div>
+                            <p>Los emails no coinciden!</p><button disabled="{true}" type="submit" className="btn btn-success mt-auto">Comprar</button>
+                        </div>
+                        :
+                        <button type="submit" className="btn btn-success mt-auto">Comprar</button>
+                    }
                 </div>
             </form>
         </div>

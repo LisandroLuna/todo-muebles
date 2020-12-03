@@ -1,6 +1,8 @@
 import React, {useState, useEffect } from "react";
 import {useCartContext} from "../contexts/cartContext";
 import {NavLink} from "react-router-dom";
+import { getFirestore } from "../firebase";
+
 
 function CartItem(props){
     const { item, del } = props;
@@ -13,19 +15,50 @@ function CartItem(props){
     </>
 }
 function CartDetail() {
-    const { items, size, removeItem } = useCartContext();
+    const { items, size, removeItem, clearItems } = useCartContext();
     const [actSize, setActSize] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [ name, setName ] = useState("");
+    const [ email, setEmail ] = useState("");
+    const [ phone, setPhone ] = useState("");
+    const [ orderId, setOrderId ] = useState("");
+    const [ loading, setLoading ] = useState(true);
+
+    function handleSubmit(event){
+        event.preventDefault();
+        const db = getFirestore();
+        const orders = db.collection("orders");
+        const order = {
+            buyer: {
+                name: name,
+                phone: phone,
+                email: email,
+            },
+            items: items,
+            date: new Date(),
+            total: totalPrice,
+        }
+        orders.add(order).then(function(docRef) {
+            setOrderId(docRef.id);
+            alert("Se creo orden con ID: " + orderId);
+        }).catch(err => {
+            console.log(err);
+        }).finally(() => {
+            setLoading(false)
+            clearItems();
+        })
+    }
 
     useEffect(()=>{
         setActSize(size);
         let prePrice = 0;
-        items.map(i => (prePrice += i.price));
+        items.map(i => (prePrice += i.price * i.total));
         setTotalPrice(parseFloat(prePrice).toFixed(2));
-    })
+    },[size,items])
 
     return (
-        <div className={"col-lg-9 p-5"}>
+        <div className={"row"}>
+            <div className={"col-lg-6 p-5"}>
             <h2>Cart List <span className="badge badge-primary badge-pill">{actSize}</span></h2>
             <ul className="list-group-flush">
                 {items.length > 0 ? items.map(i => <CartItem key={i.id} item={i} del={removeItem}/>) : <p className={"lead p-5"}>Carrito vacío. Ir al <NavLink to={"/"}>Inicio</NavLink></p>}
@@ -34,6 +67,28 @@ function CartDetail() {
                 </li>
             </ul>
         </div>
+        <div className={"col-lg-6 p-5"}>
+            <h2>Datos Personales:</h2>
+            <form onSubmit={handleSubmit}>
+                <div className="row">
+                    <div className="col p-3">
+                        <input onChange={(e) => setName(e.target.value)} type="text" className="form-control" id="name" placeholder="Nombre"/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-6 p-3">
+                        <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="email" placeholder="Email"/>
+                    </div>
+                    <div className="col-6 p-3">
+                        <input type="number" onChange={(e) => setPhone(e.target.value)} className="form-control" id="phone" placeholder="Telefono"/>
+                    </div>
+                </div>
+                <div className="text-right pt-4">
+                    <button type="submit" className="btn btn-success mt-auto">Comprar</button>
+                </div>
+            </form>
+        </div>
+</div>
     );
 }
 

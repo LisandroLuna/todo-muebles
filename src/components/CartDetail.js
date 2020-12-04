@@ -27,7 +27,7 @@ function CartDetail() {
 
     function handleSubmit(event){
         event.preventDefault();
-        const emailError = handleEmail(email, emailVer);
+        const emailError = handleEmail();
         if(emailError) {
             const db = getFirestore();
             const orders = db.collection("orders");
@@ -49,7 +49,7 @@ function CartDetail() {
                     })
                     return true;
                 })
-                console.log("Se creo orden con ID: " + docRef.id);
+                alert("Se creo orden con ID: " + docRef.id);
             }).catch(err => {
                 console.log(err);
             }).finally(() => {
@@ -60,8 +60,6 @@ function CartDetail() {
     }
 
     function handleEmail(){
-        console.log(email)
-        console.log(emailVer)
         if(email !== emailVer){
             setEmailErr(true)
             return false;

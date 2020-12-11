@@ -5,10 +5,10 @@ import logo from "../media/img/logo.svg"
 import { NavLink } from 'react-router-dom';
 import {getFirestore} from "../firebase";
 
-function CartList(props){
+function CatList(props){
     const { cat } = props;
     return <>
-        <NavLink className="dropdown-item" to={"/categories/" + cat.id }>{ cat.title }</NavLink>
+        <NavLink className="dropdown-item" to={"/categories/" + cat.key }>{ cat.title }</NavLink>
     </>
 }
 
@@ -41,12 +41,12 @@ function NavBar() {
                         <NavLink className="nav-link dropdown-toggle" data-toggle="dropdown" to={"/items/"} role="button"
                            aria-haspopup="true" aria-expanded="false">Productos</NavLink>
                         <div className="dropdown-menu">
-                            {cats.map(c => <CartList key={c.id} cat={c}/>)}
+                            {cats.map(c => <CatList key={c.id} cat={c}/>)}
                         </div>
                     </li>
                     <li className="nav-item"><NavLink className="nav-link" to={"#"}>Contacto</NavLink></li>
                 </ul>
-                <CartIcon></CartIcon>
+                <CartIcon/>
             </div>
         </nav>
     );

@@ -12,11 +12,11 @@ function Footer() {
                 <li className="nav-item"><NavLink className="nav-link" to={"/contact"}>Contacto</NavLink></li>
             </ul>
             <div className="text-center">
-                <a href="https://www.facebook.com" target={"_BLANK"} rel={"nofollow"}><i className="fab fa-facebook-square"></i></a>
-                <a href="https://twitter.com"><i className="fab fa-twitter-square" target={"_BLANK"} rel={"nofollow"}></i></a>
-                <a href="https://www.instagram.com/"><i className="fab fa-instagram" target={"_BLANK"} rel={"nofollow"}></i></a>
+                <a href="https://www.facebook.com" target={"_BLANK"} rel={"noreferrer"}><i className="fab fa-facebook-square"></i></a>
+                <a href="https://twitter.com"><i className="fab fa-twitter-square" target={"_BLANK"} rel={"noreferrer"}></i></a>
+                <a href="https://www.instagram.com/"><i className="fab fa-instagram" target={"_BLANK"} rel={"noreferrer"}></i></a>
                 <br/>
-                <p>Desarrollado por <a href={"https://github.com/LisandroLuna/todo-muebles"} target={"_BLANK"} rel={"nofollow"}>Lisandro Luna</a></p>
+                <p>Desarrollado por <a href={"https://github.com/LisandroLuna/todo-muebles"} target={"_BLANK"} rel={"noreferrer"}>Lisandro Luna</a></p>
             </div>
         </footer>
     );

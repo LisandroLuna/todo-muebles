@@ -15,6 +15,8 @@ function Footer() {
                 <a href="#"><i className="fab fa-facebook-square"></i></a>
                 <a href="#"><i className="fab fa-twitter-square"></i></a>
                 <a href="#"><i className="fab fa-instagram"></i></a>
+                <br/>
+                <p>Desarrollado por <a href={"https://github.com/LisandroLuna/todo-muebles"} target={"_BLANK"} rel={"nofollow"}>Lisandro Luna</a></p>
             </div>
         </footer>
     );

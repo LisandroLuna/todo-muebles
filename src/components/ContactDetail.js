@@ -8,7 +8,7 @@ function ContactDetail() {
                     <h2>Contactenos</h2>
                 </div>
                 <div className={"col-lg-6"}>
-                    <iframe
+                    <iframe title={"Google maps"}
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210147.39707532423!2d-58.573384947565984!3d-34.615461116377574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1607884662191!5m2!1ses-419!2sar"
                         width="100%" height="100%" frameBorder="0" style={{border:0}} allowFullScreen=""
                         aria-hidden="false" tabIndex="0"></iframe>

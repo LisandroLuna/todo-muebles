@@ -36,7 +36,7 @@ function NavBar() {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav menu">
                     <li className="nav-item"><NavLink className="nav-link" to={"/"}>Inicio</NavLink></li>
-                    <li className="nav-item"><NavLink className="nav-link" to={"#"}>Nosotros</NavLink></li>
+                    <li className="nav-item"><NavLink className="nav-link" to={"/about-us"}>Nosotros</NavLink></li>
                     <li className="nav-item dropdown">
                         <NavLink className="nav-link dropdown-toggle" data-toggle="dropdown" to={"/items/"} role="button"
                            aria-haspopup="true" aria-expanded="false">Productos</NavLink>
@@ -44,7 +44,7 @@ function NavBar() {
                             {cats.map(c => <CatList key={c.id} cat={c}/>)}
                         </div>
                     </li>
-                    <li className="nav-item"><NavLink className="nav-link" to={"#"}>Contacto</NavLink></li>
+                    <li className="nav-item"><NavLink className="nav-link" to={"/contact"}>Contacto</NavLink></li>
                 </ul>
                 <CartIcon/>
             </div>

@@ -12,6 +12,8 @@ import {
 } from "react-router-dom";
 import {CartProvider} from "./contexts/cartContext";
 import Categories from "./containers/Categories";
+import About from "./containers/About";
+import Contact from "./containers/Contact";
 
 function App() {
   return (
@@ -34,6 +36,12 @@ function App() {
                           </Route>
                           <Route path="/cart">
                               <Cart />
+                          </Route>
+                          <Route path="/about-us">
+                              <About />
+                          </Route>
+                          <Route path="/contact">
+                              <Contact />
                           </Route>
                           <Route exact path="/">
                               <Home greeting={"Todo Muebles"} />

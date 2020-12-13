@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/todo-muebles/static/css/main.e130c142.chunk.css",
-    "main.js": "/todo-muebles/static/js/main.16d51856.chunk.js",
-    "main.js.map": "/todo-muebles/static/js/main.16d51856.chunk.js.map",
-    "runtime-main.js": "/todo-muebles/static/js/runtime-main.8e2b5048.js",
-    "runtime-main.js.map": "/todo-muebles/static/js/runtime-main.8e2b5048.js.map",
-    "static/js/2.490c6002.chunk.js": "/todo-muebles/static/js/2.490c6002.chunk.js",
-    "static/js/2.490c6002.chunk.js.map": "/todo-muebles/static/js/2.490c6002.chunk.js.map",
-    "index.html": "/todo-muebles/index.html",
-    "static/css/main.e130c142.chunk.css.map": "/todo-muebles/static/css/main.e130c142.chunk.css.map",
-    "static/js/2.490c6002.chunk.js.LICENSE.txt": "/todo-muebles/static/js/2.490c6002.chunk.js.LICENSE.txt",
-    "static/media/home-banner.20842ae3.gif": "/todo-muebles/static/media/home-banner.20842ae3.gif",
-    "static/media/logo.cb44023d.svg": "/todo-muebles/static/media/logo.cb44023d.svg",
-    "static/media/top-home-banner.c5ae1533.svg": "/todo-muebles/static/media/top-home-banner.c5ae1533.svg"
+    "main.css": "/static/css/main.e130c142.chunk.css",
+    "main.js": "/static/js/main.04730f3b.chunk.js",
+    "main.js.map": "/static/js/main.04730f3b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a4c6197f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a4c6197f.js.map",
+    "static/js/2.2994785f.chunk.js": "/static/js/2.2994785f.chunk.js",
+    "static/js/2.2994785f.chunk.js.map": "/static/js/2.2994785f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e130c142.chunk.css.map": "/static/css/main.e130c142.chunk.css.map",
+    "static/js/2.2994785f.chunk.js.LICENSE.txt": "/static/js/2.2994785f.chunk.js.LICENSE.txt",
+    "static/media/about-us.b20528b7.jpg": "/static/media/about-us.b20528b7.jpg",
+    "static/media/home-banner.20842ae3.gif": "/static/media/home-banner.20842ae3.gif",
+    "static/media/logo.cb44023d.svg": "/static/media/logo.cb44023d.svg",
+    "static/media/top-home-banner.c5ae1533.svg": "/static/media/top-home-banner.c5ae1533.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8e2b5048.js",
-    "static/js/2.490c6002.chunk.js",
+    "static/js/runtime-main.a4c6197f.js",
+    "static/js/2.2994785f.chunk.js",
     "static/css/main.e130c142.chunk.css",
-    "static/js/main.16d51856.chunk.js"
+    "static/js/main.04730f3b.chunk.js"
   ]
 }

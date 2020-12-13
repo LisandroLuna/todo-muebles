@@ -1,4 +1,5 @@
 import React from 'react';
+import image from "../media/img/about-us.jpg"
 
 function AboutDetail() {
     return (
@@ -7,7 +8,7 @@ function AboutDetail() {
                 <h2>Sobre nosotros</h2>
             </div>
             <div className={"col-lg-6"}>
-                <img className={"img-fluid mb-4"} src={"/images/about-us.jpg"} alt={"About Us"}/>
+                <img className={"img-fluid mb-4"} src={image} alt={"About Us"}/>
                 <p>Pellentesque sit amet ligula faucibus dui mollis ultrices. Mauris ullamcorper nibh orci, eget rhoncus est hendrerit vitae. Ut tempor pharetra sagittis. Curabitur tempus tellus nisl, a facilisis orci dignissim et. Morbi elit mi, fringilla sit amet accumsan sed, pellentesque eget nunc. Pellentesque tincidunt non diam at luctus. Suspendisse quis metus pretium, accumsan ligula eget, faucibus ante. Suspendisse at consequat tortor. Ut sagittis volutpat nisl id iaculis. Praesent faucibus nunc a nisl porttitor fermentum. Nunc et lectus quis massa sagittis malesuada. Aliquam erat volutpat. Maecenas iaculis erat eu risus imperdiet semper id non urna. Nulla facilisi. Sed aliquam augue nunc, sed ullamcorper tellus fringilla in.</p>
             </div>
             <div className={"col-lg-6"}>

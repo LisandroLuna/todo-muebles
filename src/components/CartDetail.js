@@ -2,18 +2,9 @@ import React, {useState, useEffect } from "react";
 import {useCartContext} from "../contexts/cartContext";
 import {NavLink} from "react-router-dom";
 import { getFirestore } from "../firebase";
+import CartFinOrder from "./CartFinOrder";
+import CartItem from "./CartItem";
 
-
-function CartItem(props){
-    const { item, del } = props;
-    const price = parseFloat(item.price * item.total).toFixed(2);
-    return <>
-        <li className="list-group-item d-flex justify-content-between align-items-center"><NavLink to={"/item/" + item.id}>
-            {item.title}</NavLink> <b className={"ml-auto p-2"}>${price}</b>
-            <span className="badge badge-primary badge-pill p-2">{item.total}</span><button className="btn btn-danger p-2 m-1" onClick={() => del(item)}>X</button>
-        </li>
-    </>
-}
 function CartDetail() {
     const { items, size, removeItem, clearItems } = useCartContext();
     const [actSize, setActSize] = useState(0);
@@ -24,6 +15,7 @@ function CartDetail() {
     const [ emailErr, setEmailErr ] = useState(false);
     const [ phone, setPhone ] = useState("");
     const [ loading, setLoading ] = useState(true);
+    const [ orderId, setOrderId ] = useState("");
 
     function handleSubmit(event){
         event.preventDefault();
@@ -49,13 +41,12 @@ function CartDetail() {
                     })
                     return true;
                 })
-                alert("Se creo orden con ID: " + docRef.id);
-            }).catch(err => {
-                console.log(err);
-            }).finally(() => {
+                setOrderId(docRef.id)
                 setLoading(false)
                 clearItems();
-            })
+            }).catch(err => {
+                console.log(err);
+            });
         }
     }
 
@@ -80,46 +71,60 @@ function CartDetail() {
 
     return (
         <div className={"row"}>
-            <div className={"col-lg-6 p-5"}>
-            <h2>Cart List <span className="badge badge-primary badge-pill">{actSize}</span></h2>
-            <ul className="list-group-flush">
-                {items.length > 0 ? items.map(i => <CartItem key={i.id} item={i} del={removeItem}/>) : <p className={"lead p-5"}>Carrito vacío. Ir al <NavLink to={"/"}>Inicio</NavLink></p>}
-                <li className="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
-                    <NavLink to={"#"}><b>Total</b></NavLink> <b className={"ml-auto p-2 pr-5"}>${totalPrice}</b>
-                </li>
-            </ul>
-        </div>
-        <div className={"col-lg-6 p-5"}>
-            <h2>Datos Personales:</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="row">
-                    <div className="col p-3">
-                        <input required={true} onChange={(e) => setName(e.target.value)} type="text" className="form-control" id="name" placeholder="Nombre"/>
-                    </div>
-                    <div className="col-6 p-3">
-                        <input required={true} type="number" onChange={(e) => setPhone(e.target.value)} className="form-control" id="phone" placeholder="Telefono"/>
-                    </div>
+            {loading ? <CartFinOrder orderId={orderId}/>
+            : <div>
+                <div className={"col-lg-6 p-5"}>
+                    <h2>Cart List <span className="badge badge-primary badge-pill">{actSize}</span></h2>
+                    <ul className="list-group-flush">
+                        {items.length > 0 ? items.map(i => <CartItem key={i.id} item={i} del={removeItem}/>) :
+                            <p className={"lead p-5"}>Carrito vacío. Ir al <NavLink to={"/"}>Inicio</NavLink></p>}
+                        <li className="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
+                            <NavLink to={"#"}><b>Total</b></NavLink> <b className={"ml-auto p-2 pr-5"}>${totalPrice}</b>
+                        </li>
+                    </ul>
                 </div>
-                <div className="row">
-                    <div className="col-6 p-3">
-                        <input required={true} onKeyUpCapture={() => handleEmail()} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="email" placeholder="Email"/>
-                    </div>
-                    <div className="col-6 p-3">
-                        <input required={true} onKeyUpCapture={() => handleEmail()} onChange={(e) => setEmailVer(e.target.value)} type="email" className="form-control" id="email2" placeholder="Confirme Email"/>
-                    </div>
-                </div>
-                <div className="text-right pt-4">
-                    {emailErr ?
-                        <div>
-                            <p>Los emails no coinciden!</p><button disabled="{true}" type="submit" className="btn btn-success mt-auto">Comprar</button>
+                <div className={"col-lg-6 p-5"}>
+                    <h2>Datos Personales:</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div className="row">
+                            <div className="col p-3">
+                                <input required={true} onChange={(e) => setName(e.target.value)} type="text"
+                                       className="form-control" id="name" placeholder="Nombre"/>
+                            </div>
+                            <div className="col-6 p-3">
+                                <input required={true} type="number" onChange={(e) => setPhone(e.target.value)}
+                                       className="form-control" id="phone" placeholder="Telefono"/>
+                            </div>
                         </div>
-                        :
-                        <button type="submit" className="btn btn-success mt-auto">Comprar</button>
-                    }
+                        <div className="row">
+                            <div className="col-6 p-3">
+                                <input required={true} onKeyUpCapture={() => handleEmail()}
+                                       onChange={(e) => setEmail(e.target.value)} type="email" className="form-control"
+                                       id="email" placeholder="Email"/>
+                            </div>
+                            <div className="col-6 p-3">
+                                <input required={true} onKeyUpCapture={() => handleEmail()}
+                                       onChange={(e) => setEmailVer(e.target.value)} type="email"
+                                       className="form-control" id="email2" placeholder="Confirme Email"/>
+                            </div>
+                        </div>
+                        <div className="text-right pt-4">
+                            {emailErr ?
+                                <div>
+                                    <p>Los emails no coinciden!</p>
+                                    <button disabled="{true}" type="submit"
+                                            className="btn btn-success mt-auto">Comprar
+                                    </button>
+                                </div>
+                                :
+                                <button type="submit" className="btn btn-success mt-auto">Comprar</button>
+                            }
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+            }
         </div>
-</div>
     );
 }
 

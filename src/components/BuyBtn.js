@@ -1,18 +1,5 @@
 import React from "react";
-import { useCartContext } from  "../contexts/cartContext";
-
-function CartAddItem(props){
-    const { count, item, home } = props;
-    const { addItem } = useCartContext();
-
-    return <>
-        <button
-            onClick={() => addItem({...item, total: count})}
-            className="btn btn-info ml-auto mr-auto">
-            {home === 1? "Agregar al Carrito"  : "Comprar " + count}
-        </button>
-    </>
-}
+import CartAddItem from "./CartAddItem";
 
 function BuyItem(props){
     const { count, onAdd, home } = props;

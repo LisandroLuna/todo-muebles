@@ -1,6 +1,5 @@
 import {useCartContext} from "../contexts/cartContext";
 import React from "react";
-import BuyItem from "./BuyBtn";
 
 function CartAddItem(props){
     const { count, item, home } = props;

@@ -23,6 +23,7 @@ function ItemData(props){
                 <h3 className="product-title">{item.title}</h3>
                 <p className="product-description">{item.descL}</p>
                 <h4 className="price">Precio: <span>${item.price}</span></h4>
+                <p className="price">Stock: {item.stock} unidades</p>
                 <ItemCount initial={1} min={1} max={10} onAdd={item} home={0}/>
             </div>
         </>

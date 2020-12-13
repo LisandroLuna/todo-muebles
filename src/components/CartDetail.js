@@ -41,6 +41,7 @@ function CartDetail() {
                     })
                     return true;
                 })
+                console.log(docRef.id)
                 setOrderId(docRef.id)
                 setLoading(false)
                 clearItems();
@@ -70,9 +71,9 @@ function CartDetail() {
     },[size,items])
 
     return (
-        <div className={"row"}>
-            {loading ? <CartFinOrder orderId={orderId}/>
-            : <div>
+        <div>
+            {!loading ? <CartFinOrder id={orderId}/>
+            : <div className={"row"}>
                 <div className={"col-lg-6 p-5"}>
                     <h2>Cart List <span className="badge badge-primary badge-pill">{actSize}</span></h2>
                     <ul className="list-group-flush">

@@ -10,7 +10,7 @@ function Footer() {
                 <li className="nav-item"><NavLink className="nav-link" to={"/about-us"}>Nosotros</NavLink></li>
                 <li className="nav-item"><NavLink className="nav-link" to={"/categories/"}>Productos</NavLink></li>
                 <li className="nav-item"><NavLink className="nav-link" to={"/contact"}>Contacto</NavLink></li>
-            </ul>
+            </ul>-
             <div className="text-center">
                 <a href="https://www.facebook.com" target={"_BLANK"} rel={"noreferrer"}><i className="fab fa-facebook-square"></i></a>
                 <a href="https://twitter.com"><i className="fab fa-twitter-square" target={"_BLANK"} rel={"noreferrer"}></i></a>

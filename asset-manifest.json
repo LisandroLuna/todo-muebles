@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "https://lisandroluna.github.io/todo-muebles/static/css/main.e130c142.chunk.css",
-    "main.js": "https://lisandroluna.github.io/todo-muebles/static/js/main.17d10279.chunk.js",
-    "main.js.map": "https://lisandroluna.github.io/todo-muebles/static/js/main.17d10279.chunk.js.map",
-    "runtime-main.js": "https://lisandroluna.github.io/todo-muebles/static/js/runtime-main.6b12c7eb.js",
-    "runtime-main.js.map": "https://lisandroluna.github.io/todo-muebles/static/js/runtime-main.6b12c7eb.js.map",
-    "static/js/2.c223e31d.chunk.js": "https://lisandroluna.github.io/todo-muebles/static/js/2.c223e31d.chunk.js",
-    "static/js/2.c223e31d.chunk.js.map": "https://lisandroluna.github.io/todo-muebles/static/js/2.c223e31d.chunk.js.map",
-    "index.html": "https://lisandroluna.github.io/todo-muebles/index.html",
-    "static/css/main.e130c142.chunk.css.map": "https://lisandroluna.github.io/todo-muebles/static/css/main.e130c142.chunk.css.map",
-    "static/js/2.c223e31d.chunk.js.LICENSE.txt": "https://lisandroluna.github.io/todo-muebles/static/js/2.c223e31d.chunk.js.LICENSE.txt",
-    "static/media/about-us.b20528b7.jpg": "https://lisandroluna.github.io/todo-muebles/static/media/about-us.b20528b7.jpg",
-    "static/media/home-banner.20842ae3.gif": "https://lisandroluna.github.io/todo-muebles/static/media/home-banner.20842ae3.gif",
-    "static/media/logo.cb44023d.svg": "https://lisandroluna.github.io/todo-muebles/static/media/logo.cb44023d.svg",
-    "static/media/top-home-banner.c5ae1533.svg": "https://lisandroluna.github.io/todo-muebles/static/media/top-home-banner.c5ae1533.svg"
+    "main.css": "/static/css/main.e130c142.chunk.css",
+    "main.js": "/static/js/main.2800d0b2.chunk.js",
+    "main.js.map": "/static/js/main.2800d0b2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a4c6197f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a4c6197f.js.map",
+    "static/js/2.2994785f.chunk.js": "/static/js/2.2994785f.chunk.js",
+    "static/js/2.2994785f.chunk.js.map": "/static/js/2.2994785f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e130c142.chunk.css.map": "/static/css/main.e130c142.chunk.css.map",
+    "static/js/2.2994785f.chunk.js.LICENSE.txt": "/static/js/2.2994785f.chunk.js.LICENSE.txt",
+    "static/media/about-us.b20528b7.jpg": "/static/media/about-us.b20528b7.jpg",
+    "static/media/home-banner.20842ae3.gif": "/static/media/home-banner.20842ae3.gif",
+    "static/media/logo.cb44023d.svg": "/static/media/logo.cb44023d.svg",
+    "static/media/top-home-banner.c5ae1533.svg": "/static/media/top-home-banner.c5ae1533.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6b12c7eb.js",
-    "static/js/2.c223e31d.chunk.js",
+    "static/js/runtime-main.a4c6197f.js",
+    "static/js/2.2994785f.chunk.js",
     "static/css/main.e130c142.chunk.css",
-    "static/js/main.17d10279.chunk.js"
+    "static/js/main.2800d0b2.chunk.js"
   ]
 }

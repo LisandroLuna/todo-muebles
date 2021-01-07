@@ -36,6 +36,9 @@ $ npm install
 $ npm start
 ```
 
+Las variables de configuracion de firebase deben copiarse en el archivo:
+```./firebase/index.js```
+
 ### Desarrollo
 
 Desarrollado por [Lisandro Luna](https://github.com/LisandroLuna) para el Curso de ReactJS en [Coderhouse](https://www.coderhouse.com/)
